@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full">
   <head>
     <title><%= content_for(:title) || "My App" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -22,9 +22,7 @@
     <%= stylesheet_link_tag :app %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+  <body class="h-full">
+    <%= yield %>
   </body>
 </html>
