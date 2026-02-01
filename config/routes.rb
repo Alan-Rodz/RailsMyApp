@@ -14,4 +14,6 @@ Rails.application.routes.draw do
 
   root "sessions#new"
   resource :session, only: [ :new, :create, :destroy ]
+  resources :users, only: [ :new, :create ]
+  resources :password_resets, only: [ :new, :create, :edit, :update ]
 end

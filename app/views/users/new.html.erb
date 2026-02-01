@@ -1,0 +1,40 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+  <div class="w-full max-w-md bg-white p-8 rounded-xl shadow">
+    <h1 class="text-2xl font-semibold text-center mb-6">
+      Create an account
+    </h1>
+
+    <% if @user.errors.any? %>
+      <div class="mb-4 text-red-600 text-sm">
+        <% @user.errors.full_messages.each do |msg| %>
+          <p><%= msg %></p>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%= form_with model: @user, url: users_path, class: "space-y-4" do |f| %>
+      <div>
+        <%= f.label :email, class: "block text-sm font-medium" %>
+        <%= f.email_field :email, class: "mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+      </div>
+
+      <div>
+        <%= f.label :password, class: "block text-sm font-medium" %>
+        <%= f.password_field :password, class: "mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+      </div>
+
+      <div>
+        <%= f.label :password_confirmation, class: "block text-sm font-medium" %>
+        <%= f.password_field :password_confirmation, class: "mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+      </div>
+
+      <div>
+        <%= f.submit "Sign up", class: "w-full py-2 px-4 rounded-md bg-indigo-600 text-white font-medium hover:bg-indigo-700" %>
+      </div>
+    <% end %>
+
+    <p class="mt-4 text-center text-sm text-gray-600" style='margin-top: 1em;'>
+      Already have an account? <%= link_to "Sign in", new_session_path, class: "text-indigo-600 hover:underline" %>
+    </p>
+  </div>
+</div>
