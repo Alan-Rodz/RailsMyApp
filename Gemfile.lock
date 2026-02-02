@@ -83,7 +83,7 @@ GEM
     bcrypt_pbkdf (1.1.2)
     bigdecimal (4.0.1)
     bindex (0.8.1)
-    bootsnap (1.21.1)
+    bootsnap (1.22.0)
       msgpack (~> 1.2)
     brakeman (8.0.1)
       racc
@@ -417,7 +417,7 @@ DEPENDENCIES
   bundler-audit
   capybara
   debug
-  devise (~> 5.0)
+  devise (= 5.0)
   image_processing (~> 1.2)
   jbuilder (= 2.14.1)
   kamal
