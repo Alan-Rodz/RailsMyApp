@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    # renders the login form
   end
 
   def create
