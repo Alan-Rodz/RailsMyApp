@@ -62,11 +62,11 @@ Rails.application.configure do
 
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via bin/rails credentials:edit.
   # config.action_mailer.smtp_settings = {
-  #   user_name: Rails.application.credentials.dig(:smtp, :user_name),
-  #   password: Rails.application.credentials.dig(:smtp, :password),
   #   address: "smtp.example.com",
+  #   authentication: :plain,
+  #   password: Rails.application.credentials.dig(:smtp, :password),
   #   port: 587,
-  #   authentication: :plain
+  #   user_name: Rails.application.credentials.dig(:smtp, :user_name)
   # }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
