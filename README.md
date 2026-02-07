@@ -69,8 +69,11 @@ config.hosts = [
 6. Ensure there configured domain has an A DNS record pointing to the EC2 IP 
 
 7. Have Docker running
+8. Ensure the latest state of Gemlock is correct and in GitHub
+9. Ensure you're doing all this through WSL
+10. Do chmod +x bin/*
 
-8. Execute the following commands
+11. Execute the following commands
 ```
 export $(cat .env | xargs)
 bundle exec kamal build push
