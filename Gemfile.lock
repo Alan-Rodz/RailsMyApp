@@ -417,7 +417,7 @@ DEPENDENCIES
   bundler-audit
   capybara
   debug
-  devise (~> 5.0)
+  devise (= 5.0)
   image_processing (~> 1.2)
   jbuilder (= 2.14.1)
   kamal
