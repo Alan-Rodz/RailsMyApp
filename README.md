@@ -72,12 +72,13 @@ config.hosts = [
 8. Ensure the latest state of Gemlock is correct and in GitHub
 9. Ensure you're doing all this through WSL
 10. Do chmod +x bin/*
+11. Ensure the Docker repository in AWS has the right name (e.g. `my_app` for this app)
 
-11. Execute the following commands
+12. Execute the following commands
 ```
 export $(cat .env | xargs)
 bundle exec kamal build push
-bundle exec kamal deploy
+bundle exec dotenv kamal deploy
 bundle exec kamal exec bin/rails db:migrate
 ```
 
