@@ -49,6 +49,7 @@ COPY . .
 
 # Precompile bootsnap code for faster boot times.
 # -j 1 disable parallel compilation to avoid a QEMU bug: https://github.com/rails/bootsnap/issues/495
+ENV DATABASE_URL="postgresql://user:pass@localhost:5432/db"
 RUN bundle exec bootsnap precompile -j 1 app/ lib/
 
 # Make bin/* scripts executable
