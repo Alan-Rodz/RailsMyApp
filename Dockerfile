@@ -49,7 +49,9 @@ COPY . .
 
 # Precompile bootsnap code for faster boot times.
 # -j 1 disable parallel compilation to avoid a QEMU bug: https://github.com/rails/bootsnap/issues/495
-ENV DATABASE_URL="postgresql://user:pass@localhost:5432/db"
+
+# dummy DATABASE_URL is needed to precompile bootsnap code that loads the app's database config, but it won't be used at runtime since the real DATABASE_URL will be injected by Kamal or set at runtime.
+ENV DATABASE_URL="postgresql://user:pass@localhost:5432/db" 
 RUN bundle exec bootsnap precompile -j 1 app/ lib/
 
 # Make bin/* scripts executable
