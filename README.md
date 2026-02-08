@@ -74,12 +74,13 @@ config.hosts = [
 10. Do chmod +x bin/*
 11. Ensure the Docker repository in AWS has the right name (e.g. `my_app` for this app)
 
-12. Execute the following commands
+12. Solid Queue BS: https://github.com/rails/solid_queue?tab=readme-ov-file#single-database-configuration
+
+13. Execute the following commands
 ```
 export $(cat .env | xargs)
 bundle exec kamal build push
 bundle exec dotenv kamal deploy
-bundle exec kamal exec bin/rails db:migrate
 ```
 
 * Running the application locally
